@@ -62,13 +62,10 @@ The concept behind the Wine Quality Prediction project is to leverage multiple m
 ## Models
 
 The following models are implemented in this project:
-- Linear Regression
-- Random Forest
-- Gradient Boosting
+- Logistic Regression 
+- Random Forest Classifier
 - Support Vector Machine (SVM)
-- XGBoost
-- LightGBM
-- K-Nearest Neighbors (KNN)
+- Gradient Boosting Classifier
 
 ## Evaluation Metrics
 
@@ -79,6 +76,48 @@ The models are evaluated using the following metrics:
 - Recall: The ratio of correctly predicted positive observations to all observations in the actual class.
 - F1-Score: The weighted average of Precision and Recall.
 - Mean Squared Error (MSE): The average of the squared differences between predicted and actual values, used for regression models.
+
+## Performance Metrics
+
+### Logistic Regression Classification Report
+
+| Metric       | Precision | Recall | F1-Score | Support |
+|--------------|-----------|--------|----------|---------|
+| Class 0.0    | 0.87      | 1.00   | 0.93     | 278     |
+| Class 1.0    | 0.00      | 0.00   | 0.00     | 40      |
+| **Accuracy** |           |        | 0.87     | 318     |
+| Macro Avg    | 0.44      | 0.50   | 0.47     | 318     |
+| Weighted Avg | 0.76      | 0.87   | 0.82     | 318     |
+
+### Random Forest Classification Report
+
+| Metric       | Precision | Recall | F1-Score | Support |
+|--------------|-----------|--------|----------|---------|
+| Class 0.0    | 0.88      | 0.99   | 0.93     | 278     |
+| Class 1.0    | 0.33      | 0.03   | 0.05     | 40      |
+| **Accuracy** |           |        | 0.87     | 318     |
+| Macro Avg    | 0.60      | 0.51   | 0.49     | 318     |
+| Weighted Avg | 0.81      | 0.87   | 0.82     | 318     |
+
+### SVM Classification Report
+
+| Metric       | Precision | Recall | F1-Score | Support |
+|--------------|-----------|--------|----------|---------|
+| Class 0.0    | 0.87      | 1.00   | 0.93     | 278     |
+| Class 1.0    | 0.00      | 0.00   | 0.00     | 40      |
+| **Accuracy** |           |        | 0.87     | 318     |
+| Macro Avg    | 0.44      | 0.50   | 0.47     | 318     |
+| Weighted Avg | 0.76      | 0.87   | 0.82     | 318     |
+
+### Gradient Boosting Classification Report
+
+| Metric       | Precision | Recall | F1-Score | Support |
+|--------------|-----------|--------|----------|---------|
+| Class 0.0    | 0.88      | 0.99   | 0.93     | 278     |
+| Class 1.0    | 0.40      | 0.05   | 0.09     | 40      |
+| **Accuracy** |           |        | 0.87     | 318     |
+| Macro Avg    | 0.64      | 0.52   | 0.51     | 318     |
+| Weighted Avg | 0.82      | 0.87   | 0.82     | 318     |
 
 ## Contributing
 

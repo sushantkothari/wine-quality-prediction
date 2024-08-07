@@ -16,7 +16,7 @@ To get started with this project, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/wine-quality-prediction.git
+    git clone https://github.com/sushantkothari/wine-quality-prediction.git
     ```
 2. Navigate to the project directory:
     ```bash

@@ -8,7 +8,7 @@ The Wine Quality Prediction project aims to predict the quality of wine using ma
 
 ## More About the Project
 
-This project explores the application of multiple machine learning models to predict the quality of wine, with classes ranging from low to high quality. The models are evaluated based on several performance metrics to identify the most effective approach for this prediction task.
+This project evaluates various machine learning algorithms for predicting wine quality across different quality categories, ranging from low to high. The models are assessed using multiple performance metrics to determine the most effective approach for accurate wine quality prediction.
 
 ## Installation
 

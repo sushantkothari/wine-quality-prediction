@@ -1,132 +1,310 @@
-# Wine-Quality-Prediction
 
-A machine learning project that predicts the quality of wine based on various chemical properties.
+<div align="center">
 
-## Overview
+# Wine Quality Prediction
 
-The Wine Quality Prediction project aims to predict the quality of wine using machine learning models. The dataset used in this project contains information about several chemical properties of wine, such as acidity, residual sugar, and alcohol content, which are used to predict the quality score of the wine on a scale.
+### Machine Learning Classification Using Physicochemical Properties of Red Wine
 
-## More About the Project
+<p>
+  <img src="https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/Scikit--learn-Machine%20Learning-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" alt="Scikit-learn"/>
+  <img src="https://img.shields.io/badge/Pandas-Data%20Analysis-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"/>
+  <img src="https://img.shields.io/badge/Jupyter-Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter"/>
+</p>
 
-This project evaluates various machine learning algorithms for predicting wine quality across different quality categories, ranging from low to high. The models are assessed using multiple performance metrics to determine the most effective approach for accurate wine quality prediction.
+<p>
+  <img src="https://img.shields.io/badge/Domain-Machine%20Learning-0A9396?style=flat-square" alt="Machine Learning"/>
+  <img src="https://img.shields.io/badge/Task-Binary%20Classification-7B2FBE?style=flat-square" alt="Binary Classification"/>
+  <img src="https://img.shields.io/badge/Dataset-Red%20Wine%20Quality-blue?style=flat-square" alt="Red Wine Quality Dataset"/>
+</p>
 
-## Installation
+**A machine learning project that explores red wine quality classification using physicochemical measurements and compares multiple classification algorithms.**
 
-To get started with this project, follow these steps:
+</div>
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/sushantkothari/wine-quality-prediction.git
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd wine-quality-prediction
-    ```
+---
 
-## Usage
+## Table of Contents
 
-To run the prediction models, execute the Jupyter notebook:
+- [Project Overview](#project-overview)
+- [Objectives](#objectives)
+- [Dataset](#dataset)
+- [Project Workflow](#project-workflow)
+- [Models](#models)
+- [Evaluation Metrics](#evaluation-metrics)
+- [Results](#results)
+- [Key Observations](#key-observations)
+- [Repository Structure](#repository-structure)
+- [Getting Started](#getting-started)
+- [Running the Notebook](#running-the-notebook)
+- [Technology Stack](#technology-stack)
+- [Limitations and Future Improvements](#limitations-and-future-improvements)
+- [Acknowledgements](#acknowledgements)
+- [Author](#author)
 
-1. Launch Jupyter Notebook:
-    ```bash
-    jupyter notebook
-    ```
-2. Open the `Wine Quality Prediction.ipynb` notebook and run the cells to train and evaluate the models.
+---
 
-## Workflow
+## Project Overview
 
-The workflow of the Wine Quality Prediction project involves several key steps:
+Wine quality is influenced by several physicochemical properties, including acidity, residual sugar, chlorides, sulphates, density, and alcohol content. This project applies machine learning techniques to explore the relationship between these properties and wine quality labels.
 
-1. **Data Collection**: The wine quality dataset is obtained from the UCI Machine Learning Repository.
-2. **Data Exploration and Visualization**: The dataset is explored to understand its structure, distribution, and relationships between features. Visualization techniques such as correlation matrices and histograms are used to gain insights.
-3. **Data Preprocessing**: The data is preprocessed to handle any missing values, normalize features, and split into training and testing sets.
-4. **Feature Engineering**: Features are selected and transformed to improve model performance.
-5. **Model Selection and Training**: Various machine learning models are selected and trained on the training data. Hyperparameter tuning and cross-validation are performed to optimize the models.
-6. **Model Evaluation**: The trained models are evaluated on the test data using metrics such as accuracy, precision, recall, and F1-score.
-7. **Model Comparison**: The performance of different models is compared to identify the best-performing models.
-8. **Results Visualization**: The results are visualized to provide a clear understanding of model performance.
-9. **Documentation and Reporting**: The entire process, findings, and results are documented in a Jupyter notebook and a README file.
+Multiple classification algorithms are trained and evaluated using a Jupyter notebook. Their performance is compared using accuracy, precision, recall, and F1-score to understand their effectiveness in predicting the target classes.
 
-## Concept
+The repository contains the red wine dataset and the notebook used for data analysis, model training, and evaluation.
 
-The concept behind the Wine Quality Prediction project is to leverage multiple machine learning models to predict wine quality based on its chemical properties. By comparing different models, the project aims to identify the best approach for this prediction task, following a systematic workflow of data exploration, preprocessing, feature engineering, model training, evaluation, and comparison.
+## Objectives
 
-### Key Concepts:
+- Explore the red wine quality dataset and its physicochemical features.
+- Prepare data for supervised machine learning.
+- Train and compare multiple classification algorithms.
+- Evaluate model performance using standard classification metrics.
+- Analyze class-level performance and the impact of class imbalance.
+- Document the machine learning workflow and evaluation results.
 
-1. **Regression and Classification**: The project explores both regression and classification models to predict continuous quality scores and classify wines into quality categories.
-2. **Feature Engineering**: The process of selecting and transforming features to enhance model performance.
-3. **Model Evaluation**: The use of various metrics such as accuracy, precision, recall, and F1-score to evaluate model performance.
-4. **Hyperparameter Tuning**: The process of optimizing model parameters to improve performance.
-5. **Visualization**: The use of visualization techniques to explore data, understand model performance, and present results.
+## Dataset
+
+This project uses the **Red Wine Quality dataset** associated with the UCI Machine Learning Repository.
+
+The dataset contains physicochemical measurements of red wine samples and their corresponding quality scores.
+
+### Features
+
+| Feature | Description |
+|---|---|
+| Fixed acidity | Concentration of non-volatile acids |
+| Volatile acidity | Concentration of volatile acids |
+| Citric acid | Citric acid content |
+| Residual sugar | Sugar remaining after fermentation |
+| Chlorides | Chloride concentration |
+| Free sulfur dioxide | Free sulfur dioxide concentration |
+| Total sulfur dioxide | Total sulfur dioxide concentration |
+| Density | Density of the wine |
+| pH | Measure of acidity or alkalinity |
+| Sulphates | Sulphate content |
+| Alcohol | Alcohol content by volume |
+| Quality | Recorded wine quality score |
+
+**Dataset file:** `winequality-red.csv`
+
+The notebook uses classification labels derived from the quality data. Refer to the notebook for the exact target-label transformation and class definitions.
+
+## Project Workflow
+
+The project follows a supervised machine learning workflow:
+
+1. **Data Loading:** Load the dataset into a Pandas DataFrame.
+2. **Exploratory Data Analysis:** Examine feature distributions and relationships.
+3. **Data Preprocessing:** Prepare input features and target labels.
+4. **Data Splitting:** Separate data for model training and evaluation.
+5. **Model Training:** Train multiple classification algorithms.
+6. **Model Evaluation:** Generate classification reports and calculate evaluation metrics.
+7. **Model Comparison:** Compare model performance across the target classes.
+
+The notebook contains the implementation details for the preprocessing steps, data split, and model configurations.
 
 ## Models
 
-The following models are implemented in this project:
-- Logistic Regression 
-- Random Forest Classifier
-- Support Vector Machine (SVM)
-- Gradient Boosting Classifier
+The project evaluates the following classification algorithms:
+
+| Model | Description |
+|---|---|
+| Logistic Regression | Linear classification algorithm that estimates class probabilities |
+| Random Forest Classifier | Ensemble learning algorithm based on multiple decision trees |
+| Support Vector Machine (SVM) | Classification algorithm that identifies a separating decision boundary |
+| Gradient Boosting Classifier | Ensemble algorithm that sequentially improves predictions using decision trees |
+
+Each model provides a different approach to learning patterns in the dataset. Their performance is compared using classification metrics.
 
 ## Evaluation Metrics
 
 The models are evaluated using the following metrics:
 
-- Accuracy: The ratio of correctly predicted instances to the total instances.
-- Precision: The ratio of correctly predicted positive observations to the total predicted positives.
-- Recall: The ratio of correctly predicted positive observations to all observations in the actual class.
-- F1-Score: The weighted average of Precision and Recall.
-- Mean Squared Error (MSE): The average of the squared differences between predicted and actual values, used for regression models.
+- **Accuracy:** Proportion of correctly classified samples.
+- **Precision:** Proportion of positive predictions that are correct.
+- **Recall:** Proportion of actual positive samples correctly identified.
+- **F1-Score:** Harmonic mean of precision and recall.
+- **Support:** Number of actual samples belonging to each class.
 
-## Performance Metrics
+Accuracy provides an overall measure of performance, while precision, recall, and F1-score help identify weaknesses in individual classes.
 
-### Logistic Regression Classification Report
+## Results
 
-| Metric       | Precision | Recall | F1-Score | Support |
-|--------------|-----------|--------|----------|---------|
-| Class 0.0    | 0.87      | 1.00   | 0.93     | 278     |
-| Class 1.0    | 0.00      | 0.00   | 0.00     | 40      |
-| **Accuracy** |           |        | 0.87     | 318     |
-| Macro Avg    | 0.44      | 0.50   | 0.47     | 318     |
-| Weighted Avg | 0.76      | 0.87   | 0.82     | 318     |
+The following results are taken from the classification reports documented for the models.
 
-### Random Forest Classification Report
+The evaluation set contains **318 samples**, comprising 278 samples from class `0.0` and 40 samples from class `1.0`.
 
-| Metric       | Precision | Recall | F1-Score | Support |
-|--------------|-----------|--------|----------|---------|
-| Class 0.0    | 0.88      | 0.99   | 0.93     | 278     |
-| Class 1.0    | 0.33      | 0.03   | 0.05     | 40      |
-| **Accuracy** |           |        | 0.87     | 318     |
-| Macro Avg    | 0.60      | 0.51   | 0.49     | 318     |
-| Weighted Avg | 0.81      | 0.87   | 0.82     | 318     |
+### Model Comparison
 
-### SVM Classification Report
+| Model | Accuracy | Class 1 Precision | Class 1 Recall | Class 1 F1-Score |
+|---|---:|---:|---:|---:|
+| Logistic Regression | 0.87 | 0.00 | 0.00 | 0.00 |
+| Random Forest | 0.87 | 0.33 | 0.03 | 0.05 |
+| Support Vector Machine | 0.87 | 0.00 | 0.00 | 0.00 |
+| Gradient Boosting | 0.87 | 0.40 | 0.05 | 0.09 |
 
-| Metric       | Precision | Recall | F1-Score | Support |
-|--------------|-----------|--------|----------|---------|
-| Class 0.0    | 0.87      | 1.00   | 0.93     | 278     |
-| Class 1.0    | 0.00      | 0.00   | 0.00     | 40      |
-| **Accuracy** |           |        | 0.87     | 318     |
-| Macro Avg    | 0.44      | 0.50   | 0.47     | 318     |
-| Weighted Avg | 0.76      | 0.87   | 0.82     | 318     |
+### Logistic Regression
 
-### Gradient Boosting Classification Report
+| Class | Precision | Recall | F1-Score | Support |
+|---|---:|---:|---:|---:|
+| 0.0 | 0.87 | 1.00 | 0.93 | 278 |
+| 1.0 | 0.00 | 0.00 | 0.00 | 40 |
+| Macro Average | 0.44 | 0.50 | 0.47 | 318 |
+| Weighted Average | 0.76 | 0.87 | 0.82 | 318 |
 
-| Metric       | Precision | Recall | F1-Score | Support |
-|--------------|-----------|--------|----------|---------|
-| Class 0.0    | 0.88      | 0.99   | 0.93     | 278     |
-| Class 1.0    | 0.40      | 0.05   | 0.09     | 40      |
-| **Accuracy** |           |        | 0.87     | 318     |
-| Macro Avg    | 0.64      | 0.52   | 0.51     | 318     |
-| Weighted Avg | 0.82      | 0.87   | 0.82     | 318     |
+**Accuracy:** 0.87
 
-## Contributing
+### Random Forest Classifier
 
-Contributions are welcome! Please fork the repository and submit a pull request.
+| Class | Precision | Recall | F1-Score | Support |
+|---|---:|---:|---:|---:|
+| 0.0 | 0.88 | 0.99 | 0.93 | 278 |
+| 1.0 | 0.33 | 0.03 | 0.05 | 40 |
+| Macro Average | 0.60 | 0.51 | 0.49 | 318 |
+| Weighted Average | 0.81 | 0.87 | 0.82 | 318 |
+
+**Accuracy:** 0.87
+
+### Support Vector Machine (SVM)
+
+| Class | Precision | Recall | F1-Score | Support |
+|---|---:|---:|---:|---:|
+| 0.0 | 0.87 | 1.00 | 0.93 | 278 |
+| 1.0 | 0.00 | 0.00 | 0.00 | 40 |
+| Macro Average | 0.44 | 0.50 | 0.47 | 318 |
+| Weighted Average | 0.76 | 0.87 | 0.82 | 318 |
+
+**Accuracy:** 0.87
+
+### Gradient Boosting Classifier
+
+| Class | Precision | Recall | F1-Score | Support |
+|---|---:|---:|---:|---:|
+| 0.0 | 0.88 | 0.99 | 0.93 | 278 |
+| 1.0 | 0.40 | 0.05 | 0.09 | 40 |
+| Macro Average | 0.64 | 0.52 | 0.51 | 318 |
+| Weighted Average | 0.82 | 0.87 | 0.82 | 318 |
+
+**Accuracy:** 0.87
+
+## Key Observations
+
+- All four models report an accuracy of approximately **87%**.
+- The evaluation set has an imbalanced class distribution, with significantly fewer class `1.0` samples.
+- Logistic Regression and SVM report zero recall for class `1.0`.
+- Random Forest achieves a class `1.0` recall of `0.03`.
+- Gradient Boosting achieves the highest reported class `1.0` precision and recall among the four models, at `0.40` and `0.05`, respectively.
+- Despite similar accuracy scores, the models show limited ability to identify class `1.0` correctly.
+
+These results demonstrate why accuracy should not be considered in isolation when evaluating classification models on imbalanced datasets.
+
+## Repository Structure
+
+```text
+wine-quality-prediction/
+├── README.md
+├── wine-quality-prediction.ipynb
+└── winequality-red.csv
+```
+
+| File | Description |
+|---|---|
+| `README.md` | Project documentation |
+| `wine-quality-prediction.ipynb` | Notebook containing the analysis and model implementation |
+| `winequality-red.csv` | Red wine quality dataset |
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.x
+- Jupyter Notebook or JupyterLab
+- Required Python data science and machine learning libraries
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/sushantkothari/wine-quality-prediction.git
+cd wine-quality-prediction
+```
+
+### 2. Create a Virtual Environment
+
+**Windows**
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+**macOS / Linux**
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### 3. Install Dependencies
+
+```bash
+python -m pip install --upgrade pip
+pip install jupyter pandas numpy matplotlib seaborn scikit-learn
+```
+
+If the notebook imports additional packages, install those dependencies as needed.
+
+## Running the Notebook
+
+Start Jupyter Notebook from the project directory:
+
+```bash
+jupyter notebook
+```
+
+Open `wine-quality-prediction.ipynb` and execute the cells sequentially.
+
+The notebook provides the implementation for data preparation, classification model training, and performance evaluation.
+
+## Technology Stack
+
+| Technology | Purpose |
+|---|---|
+| Python | Core programming language |
+| Jupyter Notebook | Interactive development and experimentation |
+| Pandas | Data loading and manipulation |
+| NumPy | Numerical computations |
+| Matplotlib | Data visualization |
+| Seaborn | Statistical visualization |
+| Scikit-learn | Machine learning models and evaluation metrics |
+
+## Limitations and Future Improvements
+
+The reported results indicate that all four models struggle to identify class `1.0` reliably. Several improvements could be explored:
+
+- **Class Imbalance:** Evaluate class weighting and resampling techniques using training data only.
+- **Hyperparameter Tuning:** Optimize model parameters using cross-validation.
+- **Additional Metrics:** Evaluate balanced accuracy, macro F1-score, and confusion matrices.
+- **Data Leakage Prevention:** Fit preprocessing transformations only on training data.
+- **Target Definition:** Document the precise mapping from original quality scores to classification labels.
+- **Robust Validation:** Use stratified cross-validation and retain a separate test set for final evaluation.
+- **Regression:** Explore regression models as a separate task to predict the original numeric wine quality score.
+
+These are potential extensions and are not claims about functionality already implemented in the notebook.
 
 ## Acknowledgements
 
-This project uses the Wine Quality dataset from the UCI Machine Learning Repository. Thanks to the UCI Machine Learning team for providing this dataset.
+This project uses the Red Wine Quality dataset associated with the [UCI Machine Learning Repository](https://archive.ics.uci.edu/).
 
-## License
+## Author
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+**Sushant Kothari**
+
+- [GitHub Profile](https://github.com/sushantkothari)
+- [Wine Quality Prediction Repository](https://github.com/sushantkothari/wine-quality-prediction)
+
+---
+
+<div align="center">
+
+If you find this project useful, consider giving the repository a star.
+
+</div>
